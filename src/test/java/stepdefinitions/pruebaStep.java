@@ -32,7 +32,7 @@ public class pruebaStep {
     public void ingresoALaPaginaWeb() {
 
         //theActorCalled(actorName).whoCan(BrowseTheWeb.with(Driver.inThePage("https://www.saucedemo.com/")));
-        theActorInTheSpotlight().wasAbleTo(Open.url("https://www.saucedemo.com/"));
+        theActorInTheSpotlight().wasAbleTo();
     }
     @When("Ingreso los siguientes datos solicitados")
     public void ingresoLosSiguientesDatosSolicitados() {
