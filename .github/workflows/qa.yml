@@ -17,13 +17,7 @@ env:
 
 jobs:
   build-qa:
-    runs-on: ${{ matrix.config.os }}
-    name: ${{ matrix.config.os }}
-    strategy:
-      matrix:
-        config:
-          - { os: ubuntu-20.04, r: 'release', rspm: "https://packagemanager.rstudio.com/cran/__linux__/focal/latest" }
-          - { os: ubuntu-20.04, r: 'devel', rspm: "https://packagemanager.rstudio.com/cran/__linux__/focal/latest" }
+    runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v3 #Clona el repositorio en la maquina de ubuntu
       - uses: actions/setup-java@v3 #Instalación JDK java
@@ -32,11 +26,13 @@ jobs:
           java-version: '11'
       - name: Validate Gradle wrapper
         uses: gradle/wrapper-validation-action@e6e38bacfdf1a337459f332974bb2327a31aaf4b
-      - name: Install system dependencies
-
+      - name: Install Chrome
+        shell: bash
+        run: |
+            sh ./shells/chrome.sh
 
   integration-test-qa:
-    runs-on: ${{ matrix.config.os }}
+    runs-on: ubuntu-18.04
     environment: master
     needs: [ build-qa ]
     steps:
