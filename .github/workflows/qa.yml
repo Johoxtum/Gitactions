@@ -13,10 +13,10 @@ env:
   project_name: "bbog-cb-automation-testing"
   team: "cb" #cc-tc-cd-pv-bm-pl-pb-sd-cs-pe etc.
   language: "java" #javascript, java
-  name: R-CMD-check
+
 
 jobs:
-  R-CMD-check:
+  build-qa:
     runs-on: ${{ matrix.config.os }}
     name: ${{ matrix.config.os }}
     strategy:
