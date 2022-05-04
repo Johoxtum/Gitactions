@@ -47,7 +47,6 @@ jobs:
         with:
           name: report saucedemo
           path: |
-            target/site/serenity/index.html
             target/site/serenity/serenity-summary.html
           retention-days: 1
 
