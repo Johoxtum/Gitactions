@@ -17,7 +17,7 @@ env:
 
 jobs:
   build-qa:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3 #Clona el repositorio en la maquina de ubuntu
       - uses: actions/setup-java@v3 #Instalación JDK java
@@ -29,15 +29,11 @@ jobs:
 
 
   integration-test-qa:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     environment: master
     needs: [ build-qa ]
     steps:
       - uses: actions/checkout@v3
-      - name: Build with Gradle
-        uses: gradle/gradle-build-action@0d13054264b0bb894ded474f08ebb30921341cee
-        with:
-          arguments: build
       - name: Runner-Test
         shell: bash
         run: bash ./gradlew test --stacktrace
