@@ -28,7 +28,7 @@ jobs:
 
   integration-test-qa:
     runs-on: ubuntu-latest
-    environment: qa
+    environment: master
     needs: [ build-qa ]
     steps:
       - uses: actions/checkout@v2
