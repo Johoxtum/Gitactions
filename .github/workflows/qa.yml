@@ -13,6 +13,8 @@ env:
   project_name: "bbog-cb-automation-testing"
   team: "cb" #cc-tc-cd-pv-bm-pl-pb-sd-cs-pe etc.
   language: "java" #javascript, java
+  GRADLE_BUILD_ACTION_CACHE_KEY_PREFIX: ${{github.workflow}}#${{github.run_number}}:${{github.run_attempt}}-
+  GRADLE_BUILD_ACTION_CACHE_DEBUG_ENABLED: true
 
 jobs:
   build-qa:
