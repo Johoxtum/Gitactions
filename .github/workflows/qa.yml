@@ -27,7 +27,7 @@ jobs:
         uses: gradle/wrapper-validation-action@e6e38bacfdf1a337459f332974bb2327a31aaf4b
 
   integration-test-qa:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     environment: master
     needs: [ build-qa ]
     steps:
