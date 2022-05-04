@@ -36,5 +36,5 @@ jobs:
       - uses: actions/checkout@v3
       - name: Runner-Test
         shell: bash
-        run: bash ./gradlew test
+        run: bash ./gradlew test --stacktrace --debug
 
