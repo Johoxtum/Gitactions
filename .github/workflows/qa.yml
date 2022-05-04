@@ -16,7 +16,7 @@ env:
 
 jobs:
   build-qa:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3 #Clona el repositorio en la maquina de ubuntu
       - uses: actions/setup-java@v3 #Instalación JDK java
@@ -27,7 +27,7 @@ jobs:
         uses: gradle/wrapper-validation-action@e6e38bacfdf1a337459f332974bb2327a31aaf4b
 
   integration-test-qa:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     environment: master
     needs: [ build-qa ]
     steps:
