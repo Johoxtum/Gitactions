@@ -13,12 +13,11 @@ env:
   project_name: "bbog-cb-automation-testing"
   team: "cb" #cc-tc-cd-pv-bm-pl-pb-sd-cs-pe etc.
   language: "java" #javascript, java
-  GRADLE_BUILD_ACTION_CACHE_KEY_PREFIX: ${{github.workflow}}#${{github.run_number}}:${{github.run_attempt}}-
-  GRADLE_BUILD_ACTION_CACHE_DEBUG_ENABLED: true
+
 
 jobs:
   build-qa:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3 #Clona el repositorio en la maquina de ubuntu
       - uses: actions/setup-java@v3 #Instalación JDK java
@@ -29,12 +28,13 @@ jobs:
         uses: gradle/wrapper-validation-action@e6e38bacfdf1a337459f332974bb2327a31aaf4b
 
   integration-test-qa:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     environment: master
     needs: [ build-qa ]
     steps:
       - uses: actions/checkout@v3
       - name: Build with Gradle
-        run: ./gradlew build
-
+        uses: gradle/gradle-build-action@0d13054264b0bb894ded474f08ebb30921341cee
+        with:
+          arguments: build
 
