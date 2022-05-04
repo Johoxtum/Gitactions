@@ -37,8 +37,8 @@ jobs:
           distribution: 'adopt'
           java-version: '8'
       - uses: actions/checkout@v3
-      - name: Build with Gradle
-        uses: gradle/gradle-build-action@0d13054264b0bb894ded474f08ebb30921341cee
+      - name: Run test with gradle
+        uses: gradle/gradle-build-action@0d13054264b0bb894ded474f08ebb30921341cee --info
         with:
          arguments: build
 
