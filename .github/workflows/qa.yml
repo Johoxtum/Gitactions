@@ -5,7 +5,7 @@ on:
     types: [assigned, review_requested]
   push:
     paths:
-      - '.github/**'
+      - '.github/workflows/**'
       - 'dist/**'
   workflow_dispatch:
 
@@ -33,5 +33,5 @@ jobs:
         uses: ./
         with:
           gradle-version: 6.9
-          build-root-directory: .github/workflow-samples/no-wrapper
+          build-root-directory: .github/workflows/samples/no-wrapper
           arguments: help -DgradleVersionCheck=6.9
