@@ -34,6 +34,5 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Runner-Test
-        shell: bash
-        run: bash ./gradlew test --stacktrace --info
+        run: gradle test --stacktrace --info
 
