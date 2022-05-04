@@ -41,12 +41,13 @@ jobs:
         uses: gradle/gradle-build-action@0d13054264b0bb894ded474f08ebb30921341cee
         with:
           arguments: build
-      - name: Report Adquirencia
+      - name: Report news
         if: ${{ always() }}
         uses: actions/upload-artifact@v2
         with:
-          name: reports-news
-          retention-days: 1
+          name: report saucedemo
           path: |
-            target/site/serenity/*
+            target/site/serenity/index.html
+            target/site/serenity/serenity-summary.html
+          retention-days: 1
 
