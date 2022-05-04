@@ -24,13 +24,6 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: '8'
-      - name: Test use defined Gradle version
-        uses: ./
-        with:
-                gradle-version: 6.9
-                build-root-directory: .github/workflow-samples/no-wrapper
-                arguments: help -DgradleVersionCheck=6.9
-
       - name: Validate Gradle wrapper
         uses: gradle/wrapper-validation-action@e6e38bacfdf1a337459f332974bb2327a31aaf4b
       - name: Install Chrome
@@ -43,9 +36,10 @@ jobs:
     environment: master
     needs: [ build-qa ]
     steps:
-      - uses: actions/checkout@v3
-      - name: Build with Gradle
-        uses: gradle/gradle-build-action@0d13054264b0bb894ded474f08ebb30921341cee
+      - name: Test use defined Gradle version
+        uses: ./
         with:
-          arguments: build
+          gradle-version: 6.9
+          build-root-directory: .github/workflow-samples/no-wrapper
+          arguments: help -DgradleVersionCheck=6.9
 
