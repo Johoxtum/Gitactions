@@ -17,7 +17,14 @@ env:
 
 jobs:
   build-qa:
-    runs-on: ubuntu-20.04
+    runs-on: ${{ matrix.config.os }}
+    name: ${{ matrix.config.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - { os: ubuntu-20.04, r: 'release', rspm: "https://packagemanager.rstudio.com/cran/__linux__/focal/latest" }
+          - { os: ubuntu-20.04, r: 'devel', rspm: "https://packagemanager.rstudio.com/cran/__linux__/focal/latest" }
     steps:
       - uses: actions/checkout@v3 #Clona el repositorio en la maquina de ubuntu
       - uses: actions/setup-java@v3 #Instalación JDK java
@@ -27,14 +34,10 @@ jobs:
       - name: Validate Gradle wrapper
         uses: gradle/wrapper-validation-action@e6e38bacfdf1a337459f332974bb2327a31aaf4b
       - name: Install system dependencies
-        run: |
-          while read -r cmd
-               do
-                 eval sudo $cmd
-               done < <(Rscript -e 'cat(remotes::system_requirements("ubuntu", "20.04"), sep = "\n")')
+
 
   integration-test-qa:
-    runs-on: ubuntu-20.04
+    runs-on: ${{ matrix.config.os }}
     environment: master
     needs: [ build-qa ]
     steps:
