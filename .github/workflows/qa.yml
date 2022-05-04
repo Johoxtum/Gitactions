@@ -17,7 +17,7 @@ env:
 
 jobs:
   build-qa:
-    runs-on: macos-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3 #Clona el repositorio en la maquina de ubuntu
       - uses: actions/setup-java@v3 #Instalación JDK java
@@ -34,7 +34,7 @@ jobs:
                done < <(Rscript -e 'cat(remotes::system_requirements("ubuntu", "20.04"), sep = "\n")')
 
   integration-test-qa:
-    runs-on: macos-latest
+    runs-on: ubuntu-20.04
     environment: master
     needs: [ build-qa ]
     steps:
