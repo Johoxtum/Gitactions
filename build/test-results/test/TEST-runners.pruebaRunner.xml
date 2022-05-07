@@ -2,8 +2,8 @@
 <testsuite name="runners.pruebaRunner" tests="0" skipped="0" failures="0" errors="0" timestamp="1970-01-01T00:00:00" hostname="DESKTOP-FJ634HR" time="0.0">
   <properties/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[938 [Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///E:/Inteliij/PruebaGitactions2/src/test/resources/features/prueba.feature
-1188 [Test worker] INFO  - 
+  <system-err><![CDATA[1125 [Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///E:/Inteliij/PruebaGitactions2/src/test/resources/features/prueba.feature
+1470 [Test worker] INFO  - 
 
 -------------------------------------------------------------------------------------
      _______. _______ .______       _______ .__   __.  __  .___________.____    ____ 
@@ -19,12 +19,12 @@
  Serenity BDD Support and Training at http://serenity-bdd.info/#/trainingandsupport  
 -------------------------------------------------------------------------------------
 
-1204 [Test worker] INFO  - Test Suite Started: Como usuario quiero ingresar a la aplicacion
-1235 [Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///E:/Inteliij/PruebaGitactions2/src/test/resources/features/prueba.feature
-1235 [Test worker] INFO  - Test Suite Started: Como usuario quiero ingresar a la aplicacion
+1483 [Test worker] INFO  - Test Suite Started: Como usuario quiero ingresar a la aplicacion
+1533 [Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///E:/Inteliij/PruebaGitactions2/src/test/resources/features/prueba.feature
+1541 [Test worker] INFO  - Test Suite Started: Como usuario quiero ingresar a la aplicacion
 log4j:WARN No appenders could be found for logger (freemarker.cache).
 log4j:WARN Please initialize the log4j system properly.
 log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
-14723 [Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Cleanup test resources for URI file:///E:/Inteliij/PruebaGitactions2/src/test/resources/features/prueba.feature
+19067 [Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Cleanup test resources for URI file:///E:/Inteliij/PruebaGitactions2/src/test/resources/features/prueba.feature
 ]]></system-err>
 </testsuite>
